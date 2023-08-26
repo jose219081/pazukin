@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dymbownyja526"]
+
+[ext_resource type="Script" path="res://scenes/objects/scripts/Character.gd" id="1_8r03q"]
+[ext_resource type="Script" path="res://scenes/objects/scripts/CharacterMovement.gd" id="1_efk0q"]
+[ext_resource type="Texture2D" uid="uid://ddsntigfbua2t" path="res://resources/sprites/test-spritesheet.png" id="1_ljbvh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpad8"]
+atlas = ExtResource("1_ljbvh")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ipr4"]
+size = Vector2(16, 24)
+
+[node name="Character" type="Node2D"]
+script = ExtResource("1_8r03q")
+
+[node name="body" type="CharacterBody2D" parent="." groups=["Player"]]
+position = Vector2(0, -12)
+script = ExtResource("1_efk0q")
+
+[node name="Sprite2D" type="Sprite2D" parent="body"]
+texture = SubResource("AtlasTexture_jpad8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
+shape = SubResource("RectangleShape2D_1ipr4")
+
+[node name="rcFront" type="RayCast2D" parent="body"]
+target_position = Vector2(23, 0)
+
+[node name="rcLow" type="RayCast2D" parent="body"]
+target_position = Vector2(23, 23)

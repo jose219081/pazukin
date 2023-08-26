@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbahaioxl2707"]
+
+[ext_resource type="Texture2D" uid="uid://ddsntigfbua2t" path="res://resources/sprites/test-spritesheet.png" id="1_66x0g"]
+[ext_resource type="Script" path="res://scenes/objects/scripts/Target.gd" id="1_dwyrj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urgir"]
+atlas = ExtResource("1_66x0g")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsu5g"]
+size = Vector2(16, 16)
+
+[node name="Target" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -8)
+script = ExtResource("1_dwyrj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = SubResource("AtlasTexture_urgir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_gsu5g")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

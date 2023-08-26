@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3dfcpn1pqysq"]
+
+[ext_resource type="Texture2D" uid="uid://ddsntigfbua2t" path="res://resources/sprites/test-spritesheet.png" id="1_rwkem"]
+[ext_resource type="PackedScene" uid="uid://cbahaioxl2707" path="res://scenes/objects/Target.tscn" id="2_li11g"]
+[ext_resource type="PackedScene" uid="uid://d4khx53capfnv" path="res://scenes/objects/Spawn.tscn" id="3_6vskx"]
+[ext_resource type="PackedScene" uid="uid://dymbownyja526" path="res://scenes/objects/Character.tscn" id="4_de8wc"]
+[ext_resource type="PackedScene" uid="uid://cdfhch0xcrvo8" path="res://scenes/objects/PazukinEgg.tscn" id="5_mbs5l"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kgeme"]
+texture = ExtResource("1_rwkem")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_brsop"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_kgeme")
+
+[node name="01-goal-tutorial" type="Node2D"]
+position = Vector2(-104, -136)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(104, 136)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-16, 8)
+tile_set = SubResource("TileSet_brsop")
+format = 2
+layer_0/name = "bg"
+layer_0/tile_data = PackedInt32Array(524288, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 458758, 1, 0, 393222, 1, 0, 327686, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 327688, 1, 0, 393224, 1, 0, 458760, 1, 0, 458759, 1, 0, 393223, 1, 0, 327687, 1, 0)
+
+[node name="Target" parent="." instance=ExtResource("2_li11g")]
+position = Vector2(200, 136)
+
+[node name="Spawn" parent="." instance=ExtResource("3_6vskx")]
+position = Vector2(8, 136)
+
+[node name="Character" parent="." instance=ExtResource("4_de8wc")]
+position = Vector2(8, 136)
+
+[node name="PazukinEgg" parent="." instance=ExtResource("5_mbs5l")]
+position = Vector2(40, 136)
+amount = 4
