@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdfhch0xcrvo8"]
 
 [ext_resource type="Script" path="res://scenes/objects/scripts/PazukinEgg.gd" id="1_dmeho"]
-[ext_resource type="Texture2D" uid="uid://ddsntigfbua2t" path="res://resources/sprites/test-spritesheet.png" id="1_hrvtq"]
+[ext_resource type="Texture2D" uid="uid://dyohxaseosw35" path="res://resources/sprites/spritesheet.png" id="2_rhi5v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jj4ab"]
-atlas = ExtResource("1_hrvtq")
-region = Rect2(20, 40, 8, 8)
+atlas = ExtResource("2_rhi5v")
+region = Rect2(99, 50, 8, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cucyr"]
 size = Vector2(8, 8)
@@ -17,6 +17,7 @@ script = ExtResource("1_dmeho")
 position = Vector2(0, -4)
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
 texture = SubResource("AtlasTexture_jj4ab")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

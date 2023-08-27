@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbahaioxl2707"]
 
-[ext_resource type="Texture2D" uid="uid://ddsntigfbua2t" path="res://resources/sprites/test-spritesheet.png" id="1_66x0g"]
 [ext_resource type="Script" path="res://scenes/objects/scripts/Target.gd" id="1_dwyrj"]
+[ext_resource type="Texture2D" uid="uid://dyohxaseosw35" path="res://resources/sprites/spritesheet.png" id="2_ptwq7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_urgir"]
-atlas = ExtResource("1_66x0g")
-region = Rect2(16, 48, 16, 16)
+atlas = ExtResource("2_ptwq7")
+region = Rect2(160, 16, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsu5g"]
 size = Vector2(16, 16)
