@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Pazukin"
 run/main_scene="res://scenes/levels/02-ladder-tutorial.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]

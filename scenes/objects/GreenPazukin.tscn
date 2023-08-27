@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dfa20nga817wg"]
 
-[ext_resource type="Script" path="res://scenes/objects/scripts/GreenPazukin.gd" id="1_mikfw"]
+[ext_resource type="Script" path="res://scenes/objects/scripts/GreenPazukin.cs" id="1_o5qt7"]
 [ext_resource type="Texture2D" uid="uid://dyohxaseosw35" path="res://resources/sprites/spritesheet.png" id="2_ljjn4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jj4ab"]
@@ -11,7 +11,7 @@ region = Rect2(96, 64, 16, 16)
 size = Vector2(15, 15)
 
 [node name="GreenPazukin" type="Node2D"]
-script = ExtResource("1_mikfw")
+script = ExtResource("1_o5qt7")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -8)

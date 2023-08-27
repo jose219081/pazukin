@@ -1,0 +1,4 @@
+enum GreenPazukinKind {
+    Ladder,
+    Bridge    
+}

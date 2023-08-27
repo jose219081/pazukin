@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbahaioxl2707"]
 
-[ext_resource type="Script" path="res://scenes/objects/scripts/Target.gd" id="1_dwyrj"]
+[ext_resource type="Script" path="res://scenes/objects/scripts/Target.cs" id="1_o6vr0"]
 [ext_resource type="Texture2D" uid="uid://dyohxaseosw35" path="res://resources/sprites/spritesheet.png" id="2_ptwq7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_urgir"]
@@ -14,7 +14,7 @@ size = Vector2(16, 16)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -8)
-script = ExtResource("1_dwyrj")
+script = ExtResource("1_o6vr0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture = SubResource("AtlasTexture_urgir")

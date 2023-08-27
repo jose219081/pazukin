@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dymbownyja526"]
 
-[ext_resource type="Script" path="res://scenes/objects/scripts/Character.gd" id="1_8r03q"]
-[ext_resource type="Script" path="res://scenes/objects/scripts/CharacterMovement.gd" id="1_efk0q"]
+[ext_resource type="Script" path="res://scenes/objects/scripts/Character.cs" id="1_ysot3"]
+[ext_resource type="Script" path="res://scenes/objects/scripts/CharacterBody.cs" id="2_kl6fh"]
 [ext_resource type="Texture2D" uid="uid://dyohxaseosw35" path="res://resources/sprites/spritesheet.png" id="3_jnpjq"]
 [ext_resource type="Texture2D" uid="uid://fynf5iouhsbf" path="res://resources/sprites/aim.png" id="4_1ca15"]
 
@@ -22,11 +22,11 @@ size = Vector2(16, 16)
 size = Vector2(8, 8)
 
 [node name="Character" type="Node2D"]
-script = ExtResource("1_8r03q")
+script = ExtResource("1_ysot3")
 
 [node name="body" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(0, -12)
-script = ExtResource("1_efk0q")
+script = ExtResource("2_kl6fh")
 
 [node name="Sprite2D" type="Sprite2D" parent="body"]
 texture_filter = 1

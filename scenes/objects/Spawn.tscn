@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d4khx53capfnv"]
 
-[ext_resource type="Script" path="res://scenes/objects/scripts/Spawn.gd" id="1_kiuvw"]
+[ext_resource type="Script" path="res://scenes/objects/scripts/Spawn.cs" id="1_rms3x"]
 [ext_resource type="Texture2D" uid="uid://dyohxaseosw35" path="res://resources/sprites/spritesheet.png" id="2_dtrpy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ba76y"]
@@ -14,7 +14,7 @@ size = Vector2(32, 32)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -16)
-script = ExtResource("1_kiuvw")
+script = ExtResource("1_rms3x")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture = SubResource("AtlasTexture_ba76y")
