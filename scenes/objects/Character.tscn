@@ -1,15 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://dymbownyja526"]
+[gd_scene load_steps=10 format=3 uid="uid://dymbownyja526"]
 
 [ext_resource type="Script" path="res://scenes/objects/scripts/Character.gd" id="1_8r03q"]
 [ext_resource type="Script" path="res://scenes/objects/scripts/CharacterMovement.gd" id="1_efk0q"]
-[ext_resource type="Texture2D" uid="uid://ddsntigfbua2t" path="res://resources/sprites/test-spritesheet.png" id="1_ljbvh"]
+[ext_resource type="Texture2D" uid="uid://dyohxaseosw35" path="res://resources/sprites/spritesheet.png" id="3_jnpjq"]
+[ext_resource type="Texture2D" uid="uid://fynf5iouhsbf" path="res://resources/sprites/aim.png" id="4_1ca15"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jpad8"]
-atlas = ExtResource("1_ljbvh")
-region = Rect2(0, 24, 16, 24)
+atlas = ExtResource("3_jnpjq")
+region = Rect2(0, 40, 16, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ipr4"]
 size = Vector2(16, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21n20"]
+size = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrnrt"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3t4v6"]
+size = Vector2(8, 8)
 
 [node name="Character" type="Node2D"]
 script = ExtResource("1_8r03q")
@@ -19,6 +29,7 @@ position = Vector2(0, -12)
 script = ExtResource("1_efk0q")
 
 [node name="Sprite2D" type="Sprite2D" parent="body"]
+texture_filter = 1
 texture = SubResource("AtlasTexture_jpad8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
@@ -27,5 +38,42 @@ shape = SubResource("RectangleShape2D_1ipr4")
 [node name="rcFront" type="RayCast2D" parent="body"]
 target_position = Vector2(23, 0)
 
-[node name="rcLow" type="RayCast2D" parent="body"]
-target_position = Vector2(23, 23)
+[node name="rcLow" type="ShapeCast2D" parent="body"]
+position = Vector2(23, 23)
+shape = SubResource("RectangleShape2D_21n20")
+target_position = Vector2(0, 0)
+
+[node name="rcAim" type="RayCast2D" parent="body"]
+target_position = Vector2(24, 4)
+
+[node name="Line2D" type="Line2D" parent="body"]
+width = 1.0
+
+[node name="aim" type="Area2D" parent="body"]
+position = Vector2(24, 12)
+
+[node name="rc" type="ShapeCast2D" parent="body/aim" groups=["GreenPazukin"]]
+position = Vector2(8, -8)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_qrnrt")
+target_position = Vector2(0, 0)
+collide_with_areas = true
+
+[node name="Sprite2D" type="Sprite2D" parent="body/aim"]
+position = Vector2(8, -8)
+texture = ExtResource("4_1ca15")
+
+[node name="scDown" type="ShapeCast2D" parent="body/aim"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_3t4v6")
+target_position = Vector2(0, 0)
+
+[node name="scLeft" type="ShapeCast2D" parent="body/aim"]
+position = Vector2(-8, -8)
+shape = SubResource("RectangleShape2D_3t4v6")
+target_position = Vector2(0, 0)
+
+[node name="scRight" type="ShapeCast2D" parent="body/aim"]
+position = Vector2(24, -8)
+shape = SubResource("RectangleShape2D_3t4v6")
+target_position = Vector2(0, 0)
