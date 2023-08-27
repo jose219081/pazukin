@@ -1,6 +1,6 @@
 using Godot;
 
-partial class PazukinEgg : Node2D {
+partial class PazukinEgg : Area2D {
 	[Export]
 	public int Amount { get; set; }
 
@@ -11,7 +11,7 @@ partial class PazukinEgg : Node2D {
 	{
 		if (body.IsInGroup("Player")) {
 			((CharacterBody)body).Parent.Pazukin[Type] += Amount;
-			QueueFree();
+			GetParent().QueueFree();
 		}
 	}
 }
